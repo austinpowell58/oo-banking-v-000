@@ -13,7 +13,7 @@ class BankAccount
   end 
   
   def withdraw(money)
-    @balance -=
+    @balance -= money
   end 
   
   def display_balance

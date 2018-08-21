@@ -19,8 +19,10 @@ class Transfer
       @receiver.deposit(@amount)
       @sender.withdraw(@amount)
       @status = "complete"
+      return @status
     else 
       @status = "rejected"
+      return @status
     end
   end 
   

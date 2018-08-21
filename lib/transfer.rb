@@ -11,13 +11,11 @@ class Transfer
   end 
   
   def valid?
-    checking_sender = sender.withdraw(@amount)
-    checking_reciever = receiver.deposit(@amount)
-    checking_reciever.valid? && checking_sender.valid?
+    sender.valid? && receiver.valid?
   end 
   
   def execute_transaction
-    if 
+    if valid?
       @receiver.deposit(@amount)
       @sender.withdraw(@amount)
       @status = "complete"
@@ -26,7 +24,7 @@ class Transfer
       "Transaction can not be repeated."
     else 
       @status = "rejected"
-      "Transaction rejected. Please check your account balance."
+      "Transaction rejected. Please check your account b"
       return @status
     end
   end 

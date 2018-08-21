@@ -9,4 +9,5 @@ class Transfer
     @amount = new_amount
     @status = "pending"
   end 
+  
 end

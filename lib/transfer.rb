@@ -33,8 +33,7 @@ class Transfer
       "Transaction can not be repeated."
     else 
       @status = "rejected"
-      "Transaction rejected. Please check your account b"
-      return @status
+      "Transaction rejected. Please check your account balances."
     end
   end 
   

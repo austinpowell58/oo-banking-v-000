@@ -16,7 +16,7 @@ class Transfer
   
   
   def execute_transaction
-    if valid? && sufficient_funds?
+    if valid? 
       @receiver.deposit(@amount)
       @sender.withdraw(@amount)
       @status = "complete"

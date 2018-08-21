@@ -19,7 +19,13 @@ class Transfer
     if sender.valid?
       @receiver.deposit(@amount)
       @sender.withdraw(@amount)
-    else
+      @last_transfer = @amount
+      @status = "complete"
+    else 
+      @status = "rejected"
+    end
+  end 
+  
     
   
 end

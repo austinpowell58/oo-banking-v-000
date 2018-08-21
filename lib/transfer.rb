@@ -14,14 +14,6 @@ class Transfer
     sender.valid? && receiver.valid?
   end
   
-  def sufficient_funds? 
-    @sender.withdraw(@amount)
-    if @sender.valid?
-      true
-    else 
-      false
-    end
-  end 
   
   def execute_transaction
     if valid? && sufficient_funds?

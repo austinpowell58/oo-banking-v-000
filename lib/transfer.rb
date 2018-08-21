@@ -21,7 +21,6 @@ class Transfer
       @sender.withdraw(@amount)
       @status = "complete"
       @last_transfer = @amount
-      return @status
     else 
       @status = "rejected"
       "Transaction rejected. Please check your account balance."

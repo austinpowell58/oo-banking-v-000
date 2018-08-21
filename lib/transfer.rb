@@ -15,8 +15,8 @@ class Transfer
   end
   
   def sufficient_funds? 
-    sender_check = sender.withdraw(@amount)
-    if sender_check.balance > 0 
+    @sender.withdraw(@amount)
+    if @sender.balance > 0 
       true
     else 
       false

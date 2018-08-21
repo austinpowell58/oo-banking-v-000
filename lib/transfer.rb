@@ -11,7 +11,9 @@ class Transfer
   end 
   
   def valid?
-    sender.withdraw(@amount).valid? && receiver.deposit(@amount).valid?
+    checking_sender = sender.withdraw(@amount)
+    checking_reciever = receiver.deposit(@amount)
+    checking_reciever.valid? && checking_sender.valid?
   end 
   
   def execute_transaction

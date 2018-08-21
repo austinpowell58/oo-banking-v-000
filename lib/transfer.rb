@@ -11,11 +11,11 @@ class Transfer
   end 
   
   def valid?
-    sender.valid? && receiver.valid?
+    sender.withdraw(@amount).valid? && receiver.deposit(@amount).valid?
   end 
   
   def execute_transaction
-    if valid?
+    if 
       @receiver.deposit(@amount)
       @sender.withdraw(@amount)
       @status = "complete"

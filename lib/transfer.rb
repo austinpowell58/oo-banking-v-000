@@ -22,8 +22,6 @@ class Transfer
       @status = "complete"
       @last_transfer = @amount
       return @status
-    elsif @status != "pending"
-      "Transaction can not be repeated."
     else 
       @status = "rejected"
       "Transaction rejected. Please check your account balance."

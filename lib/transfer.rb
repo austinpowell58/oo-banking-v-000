@@ -12,6 +12,15 @@ class Transfer
   
   def valid?
     sender.valid? && receiver.valid?
+  end
+  
+  def sufficient_funds? 
+    sender_check = sender.withdraw(@amount)
+    if sender_check.balance > 0 
+      true
+    else 
+      false
+    end
   end 
   
   def execute_transaction

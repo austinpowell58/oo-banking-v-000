@@ -20,6 +20,7 @@ class Transfer
       @receiver.deposit(@amount)
       @sender.withdraw(@amount)
       @status = "complete"
+      @last_transfer = @amount
       return @status
     elsif @status != "pending"
       "Transaction can not be repeated."

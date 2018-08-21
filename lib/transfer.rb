@@ -21,7 +21,7 @@ class Transfer
       @status = "complete"
       return @status
     elsif @status != "pending"
-    
+      "Transaction can not be repeated."
     else 
       @status = "rejected"
       return @status

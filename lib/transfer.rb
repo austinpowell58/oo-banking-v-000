@@ -11,18 +11,21 @@ class Transfer
   end 
   
   def valid?
-    sender.valid?
-    receiver.valid?
+    sender.valid? && receiver.valid?
   end 
   
   def execute_transaction
-    if sender.valid? 
+    if valid?
       @receiver.deposit(@amount)
       @sender.withdraw(@amount)
       @status = "complete"
     else 
       @status = "rejected"
     end
+  end 
+  
+  def reverse_transfer
+    
   end 
   
     

@@ -20,6 +20,8 @@ class Transfer
       @sender.withdraw(@amount)
       @status = "complete"
       return @status
+    elsif @status != "pending"
+    
     else 
       @status = "rejected"
       return @status
